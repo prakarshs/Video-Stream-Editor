@@ -25,3 +25,26 @@ contrastRange.addEventListener('input', (event) => {
   });
 });
 
+// Select all spans and inputs
+const slideValues = document.querySelectorAll("span");
+const inputSliders = document.querySelectorAll("input");
+
+// Iterate over each input slider
+inputSliders.forEach((inputSlider, index) => {
+    // Add event listener for input event
+    inputSlider.addEventListener("input", () => {
+        let value = inputSlider.value;
+        // Update the corresponding slideValue span
+        slideValues[index].textContent = value;
+        slideValues[index].style.left = (value / 2) + "%";
+        slideValues[index].classList.add("show");
+    });
+
+    // Add event listener for blur event
+    inputSlider.addEventListener("blur", () => {
+        // Hide the corresponding slideValue span
+        slideValues[index].classList.remove("show");
+    });
+});
+
+

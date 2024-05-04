@@ -1,35 +1,24 @@
-chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
-    if (message.saturation) {
-        const videos = document.querySelectorAll('video');
-        videos.forEach(video => {
-            video.style.filter = `saturate(${message.saturation}%)`;
-        });
-    }
-  });
-  
-chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
-    if (message.brightness) {
-        const videos = document.querySelectorAll('video');
-        videos.forEach(video => {
-            video.style.filter = `brightness(${message.brightness}%)`;
-        });
-    }
-});
+let saturationValue = 100;
+let brightnessValue = 100;
+let contrastValue = 100;
+let sepiaValue = 0;
 
 chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
-    if (message.contrast) {
-        const videos = document.querySelectorAll('video');
-        videos.forEach(video => {
-            video.style.filter = `contrast(${message.contrast}%)`;
-        });
+    if (message.saturation !== undefined) {
+        saturationValue = message.saturation;
     }
-});
+    if (message.brightness !== undefined) {
+        brightnessValue = message.brightness;
+    }
+    if (message.contrast !== undefined) {
+        contrastValue = message.contrast;
+    }
+    if (message.sepia !== undefined) {
+        sepiaValue = message.sepia;
+    }
 
-chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
-    if (message.sepia) {
-        const videos = document.querySelectorAll('video');
-        videos.forEach(video => {
-            video.style.filter = `sepia(${message.sepia}%)`;
-        });
-    }
+    const videos = document.querySelectorAll('video');
+    videos.forEach(video => {
+        video.style.filter = `saturate(${saturationValue}%) brightness(${brightnessValue}%) contrast(${contrastValue}%) sepia(${sepiaValue}%)`;
+    });
 });

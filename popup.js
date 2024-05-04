@@ -16,12 +16,12 @@ brightnessRange.addEventListener('input', (event) => {
   });
 });
 
-const warmthRange = document.getElementById('warmthnRange');
+const contrastRange = document.getElementById('contrastRange');
 
-warmthRange.addEventListener('input', (event) => {
-  const warmthValue = event.target.value;
+contrastRange.addEventListener('input', (event) => {
+  const contrastValue = event.target.value;
   chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
-    chrome.tabs.sendMessage(tabs[0].id, { saturation: warmthValue });
+    chrome.tabs.sendMessage(tabs[0].id, { saturation: contrastValue });
   });
 });
 

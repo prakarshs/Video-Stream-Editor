@@ -12,8 +12,7 @@ The Video Ustaad is a Chrome extension designed to give users greater control ov
 <br>From your late night black-out movie marathons to sensory overloaded video; Video Ustaad comes to rescue every👏🏻single👏🏻time.
 
 ## Demo
-<video autoplay loop src="images/video.mp4" title="videDemo"></video>
-
+<video controls src="images/video.mp4" title="Title"></video>
 ## Features:
 
 1. Adjustable Brightness: Easily adjust the brightness of videos to suit your preferences. Whether you prefer a brighter or darker display, you can customize it in real-time.

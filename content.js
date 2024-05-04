@@ -19,6 +19,6 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
 
     const videos = document.querySelectorAll('video');
     videos.forEach(video => {
-        video.style.filter = `saturate(${saturationValue}%) brightness(${brightnessValue}%) contrast(${contrastValue}%) sepia(${sepiaValue}%)`;
+        video.style.filter = `saturate(${saturationValue}%) brightness(${brightnessValue}%) contrast(${contrastValue}%) sepia(${sepiaValue}%)`; 
     });
 });

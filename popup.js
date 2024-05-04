@@ -1,38 +1,55 @@
-const saturationRange = document.getElementById('saturationRange');
+// Retrieve slider values from localStorage if available, otherwise use default values
+let brightnessValue = localStorage.getItem('brightnessValue') || 100;
+let contrastValue = localStorage.getItem('contrastValue') || 100;
+let saturationValue = localStorage.getItem('saturationValue') || 100;
+let sepiaValue = localStorage.getItem('sepiaValue') || 0;
 
-saturationRange.addEventListener('input', (event) => {
-  const saturationValue = event.target.value;
-  chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
-    chrome.tabs.sendMessage(tabs[0].id, { saturation: saturationValue });
-  });
-});
+// Update the slider elements with the retrieved values
+document.getElementById('brightnessRange').value = brightnessValue;
+document.getElementById('contrastRange').value = contrastValue;
+document.getElementById('saturationRange').value = saturationValue;
+document.getElementById('sepiaRange').value = sepiaValue;
 
-const brightnessRange = document.getElementById('brightnessRange');
+// Add event listeners to the sliders to update localStorage and send messages
+document.getElementById('brightnessRange').addEventListener('input', updateBrightness);
+document.getElementById('contrastRange').addEventListener('input', updateContrast);
+document.getElementById('saturationRange').addEventListener('input', updateSaturation);
+document.getElementById('sepiaRange').addEventListener('input', updateSepia);
 
-brightnessRange.addEventListener('input', (event) => {
-  const brightnessValue = event.target.value;
-  chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
-    chrome.tabs.sendMessage(tabs[0].id, { brightness: brightnessValue });
-  });
-});
+// Function to update brightness value
+function updateBrightness(event) {
+    brightnessValue = event.target.value;
+    localStorage.setItem('brightnessValue', brightnessValue);
+    sendMessage({ brightness: brightnessValue });
+}
 
-const contrastRange = document.getElementById('contrastRange');
+// Function to update contrast value
+function updateContrast(event) {
+    contrastValue = event.target.value;
+    localStorage.setItem('contrastValue', contrastValue);
+    sendMessage({ contrast: contrastValue });
+}
 
-contrastRange.addEventListener('input', (event) => {
-  const contrastValue = event.target.value;
-  chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
-    chrome.tabs.sendMessage(tabs[0].id, { contrast: contrastValue });
-  });
-});
+// Function to update saturation value
+function updateSaturation(event) {
+    saturationValue = event.target.value;
+    localStorage.setItem('saturationValue', saturationValue);
+    sendMessage({ saturation: saturationValue });
+}
 
-const sepiaRange = document.getElementById('sepiaRange');
+// Function to update sepia value
+function updateSepia(event) {
+    sepiaValue = event.target.value;
+    localStorage.setItem('sepiaValue', sepiaValue);
+    sendMessage({ sepia: sepiaValue });
+}
 
-sepiaRange.addEventListener('input', (event) => {
-  const sepiaValue = event.target.value;
-  chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
-    chrome.tabs.sendMessage(tabs[0].id, { sepia: sepiaValue });
-  });
-});
+// Function to send message to content script with updated values
+function sendMessage(message) {
+    chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
+        chrome.tabs.sendMessage(tabs[0].id, message);
+    });
+}
 
 // Select all spans and inputs
 const slideValues = document.querySelectorAll("span");

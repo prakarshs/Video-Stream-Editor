@@ -72,7 +72,7 @@ h5{
     height: 100%;
     width: 100%;
     background: #FF5349;
-    border: 3px solid #fff;
+    border: 1.8px solid #fff;
     z-index: -1;
     left: 50%;
     transform: translateX(-50%) rotate(45deg);

@@ -25,6 +25,15 @@ contrastRange.addEventListener('input', (event) => {
   });
 });
 
+const sepiaRange = document.getElementById('sepiaRange');
+
+sepiaRange.addEventListener('input', (event) => {
+  const sepiaValue = event.target.value;
+  chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
+    chrome.tabs.sendMessage(tabs[0].id, { sepia: sepiaValue });
+  });
+});
+
 // Select all spans and inputs
 const slideValues = document.querySelectorAll("span");
 const inputSliders = document.querySelectorAll("input");

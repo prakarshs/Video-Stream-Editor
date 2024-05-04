@@ -24,3 +24,12 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
         });
     }
 });
+
+chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
+    if (message.sepia) {
+        const videos = document.querySelectorAll('video');
+        videos.forEach(video => {
+            video.style.filter = `sepia(${message.sepia}%)`;
+        });
+    }
+});

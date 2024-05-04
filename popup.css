@@ -10,8 +10,9 @@
 html,
 body {
     width: 280px;
-    padding: 6px;
+    padding: 6px 0 6px 0;
     background: #212121;
+    border-radius: 20%;
 }
 .controls{
     display: grid;
@@ -30,7 +31,8 @@ h5>a{
 h5{
     color: #828282;
     font-weight: 200;
-    margin: 10px 0 0 0px;
+    margin-top: 10px;
+    margin-left: 10px;
 }
 
 .range {

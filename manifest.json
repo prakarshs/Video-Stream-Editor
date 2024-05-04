@@ -1,8 +1,8 @@
 {
     "manifest_version": 3,
-    "name": "Video Stream Adjustor",
+    "name": "Video Ustaad",
     "version": "1.0",
-    "description": "Adjust saturation of HTML5 content.",
+    "description": "Fine-Tune the visual settings of any video on the web to your liking.",
     "permissions": ["activeTab","storage"],
     "action": {
       "default_popup": "popup.html",

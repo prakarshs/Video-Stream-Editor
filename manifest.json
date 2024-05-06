@@ -3,7 +3,6 @@
     "name": "Video Ustaad",
     "version": "1.0",
     "description": "Fine-Tune the visual settings of any video on the web to your liking. Users can adjust Brightness/Contrast/Saturation as well as apply sepia to videos they are watching in real time. The Extension works on all major video platforms - Youtube, Twitter, Instagram etc.",
-    "permissions": ["activeTab","storage"],
     "action": {
       "default_popup": "popup.html",
       "default_icon": {

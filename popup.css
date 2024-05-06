@@ -14,6 +14,23 @@ body {
     background: #212121;
     border-radius: 20%;
 }
+.misc{
+    display: flex;
+    justify-content: space-between;
+}
+.misc>button{
+    background-color: #FF5349;
+    padding: 3px 6px 3px 6px;
+    border-radius: 16%;
+    font-weight: 900;
+    margin-top: 5px;
+    color: #212121;
+    cursor: pointer;
+    transition: all ease 0.2s;
+}
+.misc>button:hover{
+    background-color: #d1170d;
+}
 .controls{
     display: grid;
     text-align: center;

@@ -6,13 +6,19 @@
 # Video Ustaad
   </div>
 
+<div align="center">
+   <img src="https://github.com/prakarshs/Video-Stream-Editor/assets/138369731/ba1c048e-7b62-4284-b302-3237d6e05c0a" alt="img" width="600" height="350">
+</div>
+
+
+https://github.com/prakarshs/Video-Stream-Editor/assets/138369731/364a444a-90f6-4bb3-84cb-b3355c9e7042
+
+
 The Video Ustaad is a Chrome extension designed to give users greater control over their video viewing experience. 
 <br>Whether you're watching tutorials on YouTube, catching up on the latest news on Twitter, or viewing professional content on LinkedIn, this extension lets you fine-tune the visual settings of any video to your liking.
 
 <br>From your late night black-out movie marathons to sensory overloaded video; Video Ustaad comes to rescue every👏🏻single👏🏻time.
 
-## Demo
-<video controls src="images/video.mp4" title="Title"></video>
 ## Features:
 
 1. Adjustable Brightness: Easily adjust the brightness of videos to suit your preferences. Whether you prefer a brighter or darker display, you can customize it in real-time.

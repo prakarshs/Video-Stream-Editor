@@ -55,6 +55,34 @@ function sendMessage(message) {
 const slideValues = document.querySelectorAll("span");
 const inputSliders = document.querySelectorAll("input");
 
+// Reset button click event listener
+document.getElementById('reset').addEventListener('click', () => {
+    // Reset slider values to default
+    saturationValue = 100;
+    brightnessValue = 100;
+    contrastValue = 100;
+    sepiaValue = 0;
+    
+    // Update slider elements with default values
+    document.getElementById('brightnessRange').value = brightnessValue;
+    document.getElementById('contrastRange').value = contrastValue;
+    document.getElementById('saturationRange').value = saturationValue;
+    document.getElementById('sepiaRange').value = sepiaValue;
+
+    // Update localStorage with default values
+    localStorage.setItem('brightnessValue', brightnessValue);
+    localStorage.setItem('contrastValue', contrastValue);
+    localStorage.setItem('saturationValue', saturationValue);
+    localStorage.setItem('sepiaValue', sepiaValue);
+    
+    // Send messages to content script with default values
+    sendMessage({ brightness: brightnessValue });
+    sendMessage({ contrast: contrastValue });
+    sendMessage({ saturation: saturationValue });
+    sendMessage({ sepia: sepiaValue });
+});
+
+
 // Iterate over each input slider
 inputSliders.forEach((inputSlider, index) => {
     // Add event listener for input event

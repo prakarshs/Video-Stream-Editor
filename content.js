@@ -28,12 +28,3 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
     updateFilters(); // Update filters when values change
 });
 
-// Reset button click event listener
-document.getElementById('reset').addEventListener('click', () => {
-    // Reset slider values to default
-    saturationValue = 100;
-    brightnessValue = 100;
-    contrastValue = 100;
-    sepiaValue = 0;
-    updateFilters(); // Update filters with default values
-});

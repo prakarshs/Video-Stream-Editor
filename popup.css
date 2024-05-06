@@ -17,6 +17,7 @@ body {
 .misc{
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
 .misc>button{
     background-color: #FF5349;
@@ -27,6 +28,7 @@ body {
     color: #212121;
     cursor: pointer;
     transition: all ease 0.2s;
+    margin-right: 10px;
 }
 .misc>button:hover{
     background-color: #d1170d;
